@@ -11,6 +11,8 @@ import com.github.margawron.census.world.ContinentUnlock;
 import com.github.margawron.census.world.FacilityControl;
 import com.github.margawron.census.world.MetagameEvent;
 
+import java.time.Instant;
+
 @JsonTypeInfo(
         use = JsonTypeInfo.Id.NAME,
         property = "event_name"
@@ -36,14 +38,25 @@ import com.github.margawron.census.world.MetagameEvent;
 })
 public abstract class CensusEvent {
 
-    private CensusEventType eventType;
+    private CensusEventName eventName;
+    private Instant timestamp;
 
-    public CensusEventType getEventType() {
-        return eventType;
+    public CensusEventName getEventName() {
+        return eventName;
     }
 
     @JsonProperty("event_name")
-    void setEventName(CensusEventType eventType) {
-        this.eventType = eventType;
+    void setEventName(CensusEventName eventName) {
+        this.eventName = eventName;
+    }
+
+
+    public Instant getTimestamp() {
+        return timestamp;
+    }
+
+    @JsonProperty("timestamp")
+    void setTimestamp(String timestamp) {
+        this.timestamp = Instant.ofEpochMilli(Long.parseLong(timestamp));
     }
 }

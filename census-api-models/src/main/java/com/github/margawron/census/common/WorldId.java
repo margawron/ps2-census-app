@@ -1,12 +1,14 @@
 package com.github.margawron.census.common;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public enum WorldId {
-    CONNERY(1),
-    MILLER(10),
-    COBALT(13),
-    EMERALD(17),
-    JAEGER(19),
-    SOLTECH(40),
+    @JsonProperty("1")      CONNERY(1),
+    @JsonProperty("10")     MILLER(10),
+    @JsonProperty("13")     COBALT(13),
+    @JsonProperty("17")     EMERALD(17),
+    @JsonProperty("19")     JAEGER(19),
+    @JsonProperty("40")     SOLTECH(40),
     ;
 
     private final int worldId;

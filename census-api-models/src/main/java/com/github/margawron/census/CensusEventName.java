@@ -2,7 +2,7 @@ package com.github.margawron.census;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public enum CensusEventType {
+public enum CensusEventName {
     @JsonProperty("AchievementEarned")      ACHIEVEMENT_EARNED,
     @JsonProperty("BattleRankUp")           BATTLE_RANK_UP,
     @JsonProperty("Death")                  DEATH,

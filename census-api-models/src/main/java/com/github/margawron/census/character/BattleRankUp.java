@@ -2,16 +2,14 @@ package com.github.margawron.census.character;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.margawron.census.CensusEvent;
-
-import java.time.Instant;
+import com.github.margawron.census.common.WorldId;
 
 public class BattleRankUp extends CensusEvent {
 
     private String battleRank;
-    private String characterId;
-    private Instant timestamp;
-    private String worldId;
-    private String zoneId;
+    private Long characterId;
+    private WorldId worldId;
+    private Long zoneId;
 
     public String getBattleRank() {
         return battleRank;
@@ -22,39 +20,30 @@ public class BattleRankUp extends CensusEvent {
         this.battleRank = battleRank;
     }
 
-    public String getCharacterId() {
+    public Long getCharacterId() {
         return characterId;
     }
 
     @JsonProperty("character_id")
-    void setCharacterId(String characterId) {
+    void setCharacterId(Long characterId) {
         this.characterId = characterId;
     }
 
-    public Instant getTimestamp() {
-        return timestamp;
-    }
-
-    @JsonProperty("timestamp")
-    void setTimestamp(String timestamp) {
-        this.timestamp = Instant.ofEpochMilli(Integer.parseInt(timestamp));
-    }
-
-    public String getWorldId() {
+    public WorldId getWorldId() {
         return worldId;
     }
 
     @JsonProperty("world_id")
-    void setWorldId(String worldId) {
+    void setWorldId(WorldId worldId) {
         this.worldId = worldId;
     }
 
-    public String getZoneId() {
+    public Long getZoneId() {
         return zoneId;
     }
 
     @JsonProperty("zone_id")
-    void setZoneId(String zoneId) {
+    void setZoneId(Long zoneId) {
         this.zoneId = zoneId;
     }
 }
