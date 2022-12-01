@@ -3,7 +3,7 @@ package com.github.margawron.event;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public abstract sealed class AbstractServiceEvent implements ServiceEvent
-        permits PayloadServiceEvent, ConnectedServiceEvent, EndpointOnlineServiceEvent {
+        permits ConnectedServiceEvent, EndpointOnlineServiceEvent, HeartbeatServiceEvent, PayloadServiceEvent {
     private ServiceType service;
     private ServiceEventType type;
 

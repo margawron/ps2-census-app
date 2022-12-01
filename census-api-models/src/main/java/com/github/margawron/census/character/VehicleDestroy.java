@@ -7,11 +7,13 @@ import com.github.margawron.census.common.WorldId;
 public class VehicleDestroy extends CensusEvent {
     private Long attackerCharacterId;
     private Long attackerLoadoutId;
+    private Long attackerTeamId;
     private Long attackerVehicleId;
     private Long attackerWeaponId;
     private Long characterId;
     private Long facilityId;
     private Long factionId;
+    private Long teamId;
     private Long vehicleId;
     private WorldId worldId;
     private Long zoneId;
@@ -32,6 +34,15 @@ public class VehicleDestroy extends CensusEvent {
     @JsonProperty("attacker_loadout_id")
     void setAttackerLoadoutId(Long attackerLoadoutId) {
         this.attackerLoadoutId = attackerLoadoutId;
+    }
+
+    public Long getAttackerTeamId() {
+        return attackerTeamId;
+    }
+
+    @JsonProperty("attacker_team_id")
+    void setAttackerTeamId(Long attackerTeamId) {
+        this.attackerTeamId = attackerTeamId;
     }
 
     public Long getAttackerVehicleId() {
@@ -77,6 +88,15 @@ public class VehicleDestroy extends CensusEvent {
     @JsonProperty("faction_id")
     void setFactionId(Long factionId) {
         this.factionId = factionId;
+    }
+
+    public Long getTeamId() {
+        return teamId;
+    }
+
+    @JsonProperty("team_id")
+    void setTeamId(Long teamId) {
+        this.teamId = teamId;
     }
 
     public Long getVehicleId() {

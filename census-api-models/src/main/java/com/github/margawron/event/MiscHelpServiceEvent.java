@@ -5,14 +5,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
 public final class MiscHelpServiceEvent implements ServiceEvent {
-    private Map<String, String> info;
+    private Map<String, Object> info;
 
-    public Map<String, String> getInfo() {
+    public Map<String, Object> getInfo() {
         return info;
     }
 
     @JsonProperty("send this for help")
-    void setInfo(Map<String, String> info) {
+    void setInfo(Map<String, Object> info) {
         this.info = info;
     }
 }

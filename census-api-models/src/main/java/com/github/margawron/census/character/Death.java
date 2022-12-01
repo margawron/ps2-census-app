@@ -2,6 +2,7 @@ package com.github.margawron.census.character;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.margawron.census.CensusEvent;
+import com.github.margawron.census.common.CensusBoolean;
 import com.github.margawron.census.common.WorldId;
 
 import java.util.Optional;
@@ -100,8 +101,8 @@ public class Death extends CensusEvent {
     }
 
     @JsonProperty("is_critical")
-    void setCritical(Boolean critical) {
-        isCritical = critical;
+    void setCritical(CensusBoolean critical) {
+        isCritical = critical.isValue();
     }
 
     public Boolean getHeadshot() {
@@ -109,8 +110,8 @@ public class Death extends CensusEvent {
     }
 
     @JsonProperty("is_headshot")
-    void setHeadshot(Boolean headshot) {
-        isHeadshot = headshot;
+    void setHeadshot(CensusBoolean headshot) {
+        isHeadshot = headshot.isValue();
     }
 
     public Long getTeamId() {

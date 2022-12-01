@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.DEDUCTION)
 @JsonSubTypes({
-        @JsonSubTypes.Type(AbstractServiceEvent.class),
+        @JsonSubTypes.Type(PayloadServiceEvent.class),
+        @JsonSubTypes.Type(ConnectedServiceEvent.class),
+        @JsonSubTypes.Type(EndpointOnlineServiceEvent.class),
         @JsonSubTypes.Type(MiscHelpServiceEvent.class),
         @JsonSubTypes.Type(SubscriptionServiceEvent.class),
 })

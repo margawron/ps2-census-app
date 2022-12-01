@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.margawron.census.CensusEvent;
 import com.github.margawron.census.common.WorldId;
 
-import java.time.Instant;
-
 public class PlayerLogout extends CensusEvent {
     private Long characterId;
     private WorldId worldId;
